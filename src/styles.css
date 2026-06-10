@@ -1,0 +1,84 @@
+
+:root {
+    --bg:           #0a0804;
+    --bg2:          #150f04;
+    --bg3:          #1e1608;
+    --fg:           #f0e6d3;
+    --fg2:          #c0a87a;
+    --fg3:          #a08050;
+    --fg4:          #7a6848;
+    --fg5:          #5a4830;
+    --accent:       #c8a96e;
+    --accent-dark:  #1a1209;
+    --border:       rgba(200, 169, 110, 0.2);
+    --border-hover: rgba(200, 169, 110, 0.5);
+    --card-bg:      rgba(200, 169, 110, 0.05);
+    --input-bg:     rgba(255, 255, 255, 0.05);
+    --scrollbar:    #3a2a10;
+}
+
+body.light {
+    --bg:           #f5f0e8;
+    --bg2:          #ede7d9;
+    --bg3:          #e4dccb;
+    --fg:           #2a1f0a;
+    --fg2:          #5a3a10;
+    --fg3:          #7a5520;
+    --fg4:          #8a6530;
+    --fg5:          #9a7540;
+    --accent:       #9a6820;
+    --accent-dark:  #fff8f0;
+    --border:       rgba(100, 60, 10, 0.2);
+    --border-hover: rgba(100, 60, 10, 0.45);
+    --card-bg:      rgba(100, 60, 10, 0.05);
+    --input-bg:     rgba(255, 255, 255, 0.7);
+    --scrollbar:    #c8a870;
+}
+
+/* ─── Базовые стили ───────────────────────────────────────────────────────── */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    transition: background 0.25s, color 0.25s;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--scrollbar); border-radius: 3px; }
+
+input,
+select,
+textarea {
+    background: var(--input-bg) !important;
+    color: var(--fg) !important;
+    border-color: var(--border) !important;
+    font-family: inherit;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--fg5) !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--accent) !important;
+    box-shadow: 0 0 0 2px rgba(200, 169, 110, 0.15) !important;
+    outline: none;
+}
+
+option {
+    background: var(--bg2);
+    color: var(--fg);
+}
